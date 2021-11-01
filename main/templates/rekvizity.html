@@ -1,0 +1,82 @@
+{% extends 'patterns/__header__footer.html' %}
+
+{% block title %}Реквизиты{% endblock %}
+
+{% block content%}
+<div class="wrapper_inner">
+    <section class="middle">
+        <div class="container">
+            <div class="breadcrumbs" id="navigation" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+				<div class="bx-breadcrumb-item" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					<a href="/" title="Главная" itemprop="item">
+						<span itemprop="name">
+							Главная
+						</span>
+						<meta itemprop="position" content="1">
+					</a>
+				</div>
+				<span class="separator">-</span>
+				<span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					<span itemprop="item">
+						<span itemprop="name">
+							Реквизиты
+						</span>
+						<meta itemprop="position" content="2">
+					</span>
+				</span>
+			</div>
+			<!--title_content-->
+            <h1 id="pagetitle" data-page="13">Реквизиты</h1>
+			<!--end-title_content-->
+            <div id="content">
+                <div class="left_block">
+                    <ul class="left_menu">
+                                                <li class="item ">
+                            <a data-page="1" href="{{base_url}}"><span>Главная</span></a>
+						</li>
+                                                <li class="item current">
+                            <a data-page="13" href="{{base_url}}rekvizity"><span>Реквизиты </span></a>
+						</li>
+                                                <li class="item ">
+                            <a data-page="15" href="{{base_url}}oplata"><span>Оплата</span></a>
+						</li>
+
+                                                <li class="item ">
+                            <a data-page="17" href="{{base_url}}dostavka"><span>Доставка</span></a>
+						</li>
+
+                                                <li class="item ">
+                            <a data-page="18" href="{{base_url}}garantiya"><span>Гарантия</span></a>
+						</li>
+
+                                                <li class="item ">
+                            <a data-page="16" href="{{base_url}}contact"><span>Контакты</span></a>
+						</li>
+
+
+
+                                                					</ul>
+                    <script type="text/javascript">
+                        $("ul.left_menu li:not(.current)").click(function(){
+                            $(this).siblings().removeClass("current");
+                            $(this).addClass("current");
+						});
+                        if($('.child_container').length){
+                            $('.child_container .menu_item').each(function(){
+                                if($(this).hasClass('current')){
+                                    $(this).closest('.item').addClass('current');
+								}
+							})
+						}
+					</script>
+				</div>
+                <div class="right_block">
+                    <!-- Тело страницы -->
+                    <h2><span style="font-family: arial, helvetica, sans-serif; color: #000000;"><strong>Общество с ограниченной ответственностью «ПС-ПЛЮС»</strong></span></h2><p></p><p class="big_text"><span style="color: #000000; font-size: small;">Юридический адрес:</span></p><p class="big_text"><span style="color: #888888; font-size: small;">107120, г Москва, улица Сергия Радонежского, 27стр.1</span></p><p></p><p class="big_text"><span style="color: #000000; font-size: small;">Фактический адрес:</span></p><p class="big_text"><span style="font-size: small; color: #888888;">107120, г Москва, улица Сергия Радонежского, 27стр.1</span></p><p class="big_text"></p><p><strong><span style="font-size: small; color: #000000;">ОГРН:</span></strong></p><p class="big_text"><span style="font-size: small; color: #888888;">1037739909162</span></p><p class="big_text"><span style="font-size: small; color: #000000;">ИНН/КПП:</span></p><p class="big_text"><span style="font-size: small; color: #888888;"><span>7709509922</span>/770901001</span></p><p class="big_text"><span style="font-size: small; color: #000000;">ОКПО:</span></p><p class="big_text"><span style="font-size: small; color: #888888;">71288631</span></p><p class="big_text"><span style="font-size: small; color: #000000;">Телефон:</span></p><p><span style="font-size: medium;"><a rel="noopener noreferrer" class="link link_pseudo numbers-provider-account-number-cell__phone">&nbsp;8 800 333 86 61</a></span></p><p><span style="font-size: medium;"><a rel="noopener noreferrer" class="link link_pseudo numbers-provider-account-number-cell__phone">+7 499 719 90 12</a></span></p><p><span class="big_text" style="font-size: small; color: #000000;">E-mail:</span></p><p><span style="font-size: small; color: #888888;"><span class="big_text"></span>sony-ps5@internet.ru</span><br><br><br></p>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+</div>
+{%endblock%}

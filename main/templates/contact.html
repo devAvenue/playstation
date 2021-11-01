@@ -1,0 +1,176 @@
+{% extends 'patterns/__header__footer.html' %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content%}
+
+<div class="wrapper_inner">
+    <section class="middle">
+        <div class="container">
+            <div class="breadcrumbs" id="navigation" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <div class="bx-breadcrumb-item" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a href="/" title="Главная" itemprop="item">
+                        <span itemprop="name">
+                            Главная
+						</span>
+                        <meta itemprop="position" content="1">
+					</a>
+				</div>
+                <span class="separator">-</span>
+                <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <span itemprop="item">
+                        <span itemprop="name">
+                            Контакты
+						</span>
+                        <meta itemprop="position" content="2">
+					</span>
+				</span>
+			</div>
+            <!--title_content-->
+            <h1 data-page="16" id="pagetitle">
+                Контакты
+			</h1>
+            <!--end-title_content-->
+		</div>
+	</section>
+</div>
+
+
+<div class="contacts_map">
+    <div class="module-map">
+        <div class="map-wr module-contacts-map-layout">
+            <div id="BX_GMAP_MAP_PxWcPa" class="bx-google-map" style="height: 400px; width: 100%;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.6622331209346!2d37.6767484157794!3d55.74699748055181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54abf855d5ae3%3A0x57387a62188070!2z0YPQuy4g0KHQtdGA0LPQuNGPINCg0LDQtNC-0L3QtdC20YHQutC-0LPQviwgMjcg0YHRgtGA0L7QtdC90LjQtSAxLCDQnNC-0YHQutCy0LAsIDEwNTEyMA!5e0!3m2!1sru!2sru!4v1630324247457!5m2!1sru!2sru" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="wrapper_inner">
+    <div class="contacts_left clearfix">
+        <div class="store_description">
+            <div class="store_property">
+                <div class="title">
+                    Адрес
+				</div>
+                <div class="value">
+                    107120, г Москва, улица Сергия Радонежского, 27стр.1
+				</div>
+			</div>
+            <div class="store_property">
+                <div class="title">
+                    Телефон
+				</div>
+                <div class="value">
+                    <a rel="nofollow" href="tel:88005111324">
+                       8 800 511 13 24&nbsp;
+					</a>
+				</div>
+			</div>
+            <div class="store_property">
+                <div class="title">
+                    Email
+				</div>
+                <div class="value">
+                    <a rel="nofollow" href="mailto:mail@domen.com">
+                        m-sony-store@internet.ru
+					</a>
+				</div>
+			</div>
+            <div class="store_property">
+                <div class="title">
+                    Режим работы
+				</div>
+                <div class="value">
+                    Пн. – Пт.: с 9:00 до 21:00
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="contacts_right clearfix">
+        <blockquote>
+            <p>8 800 511 13 24 &nbsp;горячая линия&nbsp;</p><p>+7 499 719 71 72 call centre<br><br><br><br></p>
+		</blockquote>
+        <div class="form inline FEEDBACK b">
+            <div class="form_head">
+                <h4>
+                    Обратная связь
+				</h4>
+			</div>
+            <form method="post">
+                <div class="form_body">
+                    <div class="form_left">
+                        <div class="form-control">
+                            <label>
+                                <span>
+                                    Сообщение&nbsp;
+                                    <span class="star">
+                                        *
+									</span>
+								</span>
+							</label>
+                            <textarea data-sid="POST" required="" data-format=".+" data-notice="Введите сообщение" value="" name="message" cols="40" rows="5" aria-required="true"></textarea>
+						</div>
+					</div>
+                    <div class="form_right">
+                        <div class="form-control">
+                            <label>
+                                <span>
+                                    Ваше имя&nbsp;
+                                    <span class="star">
+                                        *
+									</span>
+								</span>
+							</label>
+                            <input class="inputtext" data-sid="CLIENT_NAME" required="" data-format=".+" data-notice="Введите имя" value="" name="name" maxlength="255" aria-required="true" type="text">
+						</div>
+                        <div class="form-control">
+                            <label>
+                                <span>
+                                    E-mail
+								</span>
+							</label>
+                            <input placeholder="mail@domen.com" class="inputtext" data-sid="EMAIL" data-format="email" data-notice="Введите email" value="" name="email" maxlength="255" type="email">
+						</div>
+                        <div class="form-control bg register-captcha captcha-row clearfix">
+                            <div class="iblock label_block">
+                                <label>
+                                    <span>
+                                        Введите код&nbsp;
+                                        <span class="star">
+                                            *
+										</span>
+									</span>
+								</label>
+                                <div class="captcha_image">
+                                    <img src="captcha/image.php?9966" border="0">
+								</div>
+                                <div class="captcha_input">
+                                    <input class="inputtext" type="text" name="captcha_code" size="30" maxlength="50" value="" required="" aria-required="true" data-format="\d\d\d\d" data-notice="Введите капчу">
+								</div>
+							</div>
+                            <div class="iblock text_block">
+							</div>
+						</div>
+					</div>
+                    <div class="clearboth"></div>
+                    <div class="clearboth"></div>
+				</div>
+                <div class="form_footer">
+                    <div class="licence_block filter label_block">
+                        <input id="licenses_inline" name="licenses_inline" required="" value="Y" aria-required="true" type="checkbox">
+                        <label for="licenses_inline">
+                            Я согласен на
+                            <a href="/konfidentsialnost" target="_blank">
+                                обработку персональных данных
+							</a>
+						</label>
+					</div>
+                    <input class="button medium" value="Отправить" name="feedback" type="submit">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="clearboth"></div>
+        </div>
+{%endblock%}

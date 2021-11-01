@@ -1,0 +1,340 @@
+{% extends 'patterns/__header__footer.html' %}
+
+{% block title %}Каталог{% endblock %}
+
+{% block content%}
+<div class="wrapper_inner">
+    <section class="middle">
+        <div class="container">
+            <div class="breadcrumbs" id="navigation" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <div class="bx-breadcrumb-item" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope=""
+                     itemtype="http://schema.org/ListItem">
+                    <a href="/" title="Главная" itemprop="item">
+                        <span itemprop="name">
+                            Главная
+						</span>
+                        <meta itemprop="position" content="1">
+                    </a>
+                </div>
+                <span class="separator">-</span>
+                <div class="bx-breadcrumb-item" itemprop="itemListElement" itemscope=""
+                     itemtype="http://schema.org/ListItem">
+                    <a href="/catalog/" title="Каталог" itemprop="item">
+                        <span itemprop="name">
+                            Каталог
+						</span>
+                        <meta itemprop="position" content="2">
+                    </a>
+                </div>
+            </div>
+            <!--title_content-->
+
+            <h1 id="pagetitle"></h1>
+            <!--end-title_content-->
+            <div id="content">
+
+                <div class="left_block catalog vertical">
+                    <div class="internal_sections_list">
+                        <div class="title opened">
+                            <div class="inner_block">Каталог
+                                <span class="hider opened"></span>
+                            </div>
+                        </div>
+                        <ul class="sections_list_wrapp">
+                          {% for category in categories%}
+                            <li class="item  " data-id="{{category.id}}">
+                                <a data-category="{{category.id}}" href="{{base_url}}catalog/{{category.id}}"><span>{{category.name}}</span></a>
+                            </li>
+                          {%endfor%}
+                        </ul>
+                    </div>
+
+                    <script>
+        $(".internal_sections_list").ready(function(){
+            $(".internal_sections_list .title .inner_block").click(function(){
+                $(this).find('.hider').toggleClass("opened");
+                $(this).closest(".internal_sections_list").find(".title").toggleClass('opened');
+                $(this).closest(".internal_sections_list").find(".sections_list_wrapp").slideToggle(200);
+                $.cookie.json = true;
+                $.cookie("MSHOP_internal_sections_list_HIDE", $(this).find('.hider').hasClass("opened"),{path: '/',	domain: '',	expires: 360});
+			});
+            if($.cookie("MSHOP_internal_sections_list_HIDE") == 'false'){
+                $(".internal_sections_list .title").removeClass("opened");
+                $(".internal_sections_list .title .hider").removeClass("opened");
+                $(".internal_sections_list .sections_list_wrapp").hide();
+			}
+            $('.left_block .internal_sections_list li.item a.parent').click(function(e) {
+                e.preventDefault();
+                $(this).parent().find('.child_container').slideToggle();
+			});
+		});
+
+
+                    </script>
+
+                </div>
+
+                <div class="right_block clearfix catalog" id="right_block_ajax">
+                    <div class="inner_wrapper">
+                        <div class="adaptive_filter">
+                            <a class="filter_opener"><i></i><span>Фильтр</span></a>
+                        </div>
+                        <script type="text/javascript">
+                            $(".filter_opener").click(function(){
+                                $(this).toggleClass("opened");
+                                var $parent = $(".bx_filter_vertical, .bx_filter").parent();
+                                if($parent.is('[id^="bx_incl_area"]')){
+                                    $parent.show();
+								}
+                                $(".bx_filter_vertical, .bx_filter").slideToggle(333);
+							});
+
+
+                        </script>
+                        <div class="sort_header view_list">
+
+                            <div class="sort_filter">
+                                <a rel="nofollow" class="sort_btn  asc SHOWS" href="/catalog/?sort=position">
+                                    <i class="icon" title="По популярности"></i><span>По умолчанию</span><i
+                                        class="arr"></i>
+                                </a>
+                                <a rel="nofollow" class="sort_btn current desc asc PRICE" href="/catalog/?sort=price">
+                                    <i class="icon" title="По популярности"></i><span>По цене</span><i class="arr"></i>
+                                </a>
+                                <a rel="nofollow" class="sort_btn  asc NAME" href="/catalog/?sort=name">
+                                    <i class="icon" title="По популярности"></i><span>По названию</span><i
+                                        class="arr"></i>
+                                </a>
+                            </div>
+                            <div class="sort_display">
+                                <a rel="nofollow" href="javascript:;"
+                                   onclick="document.cookie='view=block;path=/';document.location.reload();"
+                                   class="sort_btn block "><i title="плиткой"></i></a>
+                                <a rel="nofollow" href="javascript:;"
+                                   onclick="document.cookie='view=list;path=/';document.location.reload();"
+                                   class="sort_btn list current"><i title="списком"></i></a>
+                                <a rel="nofollow" href="javascript:;"
+                                   onclick="document.cookie='view=table;path=/';document.location.reload();"
+                                   class="sort_btn table "><i title="таблицей"></i></a>
+                            </div>
+                        </div>
+                        <div class="ajax_load block">
+
+                            <div class="display_list">
+
+
+                            </div>
+                            <div class="bottom_nav block">
+                                <div class="ajax_load_btn">
+                                    <span class="more_text_ajax">Показать еще</span>
+                                </div>
+
+
+                                <script type="text/javascript" src="js/ctrlnavigate.js"></script>
+
+                                <!-- Листалка страниц -->
+                                <div class="module-pagination">
+                                    <ul class="flex-direction-nav">
+        <span class="nums">
+            <span class="cur">1</span>
+              <a href="{{base_url}}catalog/?page=2">2</a>
+              <a href="{{base_url}}catalog/?page=3">3</a>
+              <a href="{{base_url}}catalog/?page=4">4</a>
+              <a href="{{base_url}}catalog/?page=5">5</a>
+              <a href="{{base_url}}catalog/?page=all">все</a>
+        </span>
+                                        <li class="flex-nav-next"><a class="flex-next" href="/catalog/?page=2"></a></li>
+                                    </ul>
+                                </div>
+                                <!-- Листалка страниц (The End) -->
+
+                            </div>
+                            <div class="group_description_block bottom">
+                                <div>
+                                    <p>
+
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab_slider_wrapp s_CxqOHg best_block">
+                    <div class="top_blocks">
+                        <ul class="tabs">
+<!--                            <li data-code="VIEWED" class=""><span>Ранее вы смотрели</span></li>-->
+                            <li data-codes="BEST" class="active cur"><span>Лучшие предложения</span></li>
+                            <li class="stretch"></li>
+                        </ul>
+                        <ul class="slider_navigation top">
+                            <li class="tabs_slider_navigation VIEWED_nav cur" data-code="VIEWED">
+                                <ul class="flex-direction-nav">
+                                    <li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li>
+                                    <li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li>
+                                </ul>
+                            </li>
+                            <li class="tabs_slider_navigation BEST_nav " data-code="BEST"></li>
+                        </ul>
+                    </div>
+                    <ul class="tabs_content" style="height: 404px;">
+                        <li class="tab BEST_wrapp active cur" data-code="BEST">
+                            <ul class="tabs_slider BEST_slides wr">
+                                <li class="catalog_item product">
+                                    <div class="image_wrapper_block">
+                                        <a href="products/komplekt-ps5-bez-diskovoda--gejmpad--dok-stantsiya--pult--besprovodnaya-garnitura"
+                                           class="thumb image">
+                                            <div class="stickers">
+                                                <div class="sticker_recommend" title="Советуем"></div>
+                                            </div>
+                                            <img src="https://m-playstation.store/files/products/bez.165x165.jpg?74d102fa20569d5ce8323db7f10ec28e"
+                                                 alt="Комплект PS5 без дисковода + геймпад + док-станция + пульт + беспроводная гарнитура"
+                                                 title="Комплект PS5 без дисковода + геймпад + док-станция + пульт + беспроводная гарнитура">
+                                        </a>
+                                        <div class="like_icons">
+                                            <div class="wish_item_button">
+                                                <a title="Отложить"
+                                                   href="wishlist/komplekt-ps5-bez-diskovoda--gejmpad--dok-stantsiya--pult--besprovodnaya-garnitura"
+                                                   class="wishlist wish_item to likes"><i></i></a>
+                                            </div>
+                                            <div class="compare_item_button">
+                                                <a title="Сравнить"
+                                                   href="compare/komplekt-ps5-bez-diskovoda--gejmpad--dok-stantsiya--pult--besprovodnaya-garnitura"
+                                                   class="compare compare_item to likes"><i></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item_info main_item_wrapper">
+                                        <div class="item-title">
+                                            <a href="products/komplekt-ps5-bez-diskovoda--gejmpad--dok-stantsiya--pult--besprovodnaya-garnitura"><span
+                                                    data-product="196">Комплект PS5 без дисковода + геймпад + док-станция + пульт + беспроводная гарнитура</span></a>
+                                        </div>
+                                        <!-- $product->variants|count > 0 -->
+                                        <div class="item-stock"><span class="icon stock"></span><span class="value">в наличии</span>
+                                        </div>
+                                        <div class="cost prices clearfix">
+                                            <div class="price">
+                                                <span class="values_wrapper">56 190 руб.</span>
+                                            </div>
+                                        </div>
+                                        <div class="buttons_block clearfix">
+                                            <a class="button basket read_more" rel="nofollow"
+                                               href="products/komplekt-ps5-bez-diskovoda--gejmpad--dok-stantsiya--pult--besprovodnaya-garnitura">Подробнее</a>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <script type="text/javascript">
+    $(document).ready(function(){
+        $('.tab_slider_wrapp.s_CxqOHg .tabs > li').first().addClass('cur');
+        $('.tab_slider_wrapp.s_CxqOHg .slider_navigation > li').first().addClass('cur');
+        $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li').first().addClass('cur');
+        var flexsliderItemWidth = 210;
+        var flexsliderItemMargin = 20;
+        var sliderWidth = $('.tab_slider_wrapp.s_CxqOHg').outerWidth();
+        var flexsliderMinItems = Math.floor(sliderWidth / (flexsliderItemWidth + flexsliderItemMargin));
+        $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur').flexslider({
+            animation: 'slide',
+            selector: '.tabs_slider .catalog_item',
+            slideshow: false,
+            animationSpeed: 600,
+            directionNav: true,
+            controlNav: false,
+            pauseOnHover: true,
+            animationLoop: true,
+            itemWidth: flexsliderItemWidth,
+            itemMargin: flexsliderItemMargin,
+            minItems: flexsliderMinItems,
+            controlsContainer: '.tabs_slider_navigation.cur',
+            start: function(slider){
+                slider.find('li').css('opacity', 1);
+            }
+        });
+        $('.tab_slider_wrapp.s_CxqOHg .tabs > li').on('click', function(){
+            if(!$(this).hasClass('active')){
+                var sliderIndex = $(this).index();
+                $(this).addClass('active').addClass('cur').siblings().removeClass('active').removeClass('cur');
+                $('.tab_slider_wrapp.s_CxqOHg .slider_navigation > li:eq(' + sliderIndex + ')').addClass('cur').show().siblings().removeClass('cur');
+                $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li:eq(' + sliderIndex + ')').addClass('cur').siblings().removeClass('cur');
+                if(!$('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur .flex-viewport').length){
+                    $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur').flexslider({
+                        animation: 'slide',
+                        selector: '.tabs_slider .catalog_item',
+                        slideshow: false,
+                        animationSpeed: 600,
+                        directionNav: true,
+                        controlNav: false,
+                        pauseOnHover: true,
+                        animationLoop: true,
+                        itemWidth: flexsliderItemWidth,
+                        itemMargin: flexsliderItemMargin,
+                        minItems: flexsliderMinItems,
+                        controlsContainer: '.tabs_slider_navigation.cur',
+                    });
+                }
+                $(window).resize();
+            }
+        });
+        $(window).resize(function(){
+            var sliderWidth = $('.tab_slider_wrapp.s_CxqOHg').outerWidth();
+            $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur').css('height', '');
+            $('.tab_slider_wrapp.s_CxqOHg .tabs_content .tab.cur .tabs_slider .buttons_block').hide();
+            $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur').equalize({children: '.item-title'});
+            $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur').equalize({children: '.item_info'});
+            $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur').equalize({children: '.catalog_item'});
+            var itemsButtonsHeight = $('.tab_slider_wrapp.s_CxqOHg .tabs_content .tab.cur .tabs_slider li .buttons_block').height();
+            var tabsContentUnhover = $('.tab_slider_wrapp.s_CxqOHg .tabs_content .tab.cur').height() * 1;
+            var tabsContentHover = tabsContentUnhover + itemsButtonsHeight+50;
+            $('.tab_slider_wrapp.s_CxqOHg .tabs_content .tab.cur').attr('data-unhover', tabsContentUnhover);
+            $('.tab_slider_wrapp.s_CxqOHg .tabs_content .tab.cur').attr('data-hover', tabsContentHover);
+            $('.tab_slider_wrapp.s_CxqOHg .tabs_content').height(tabsContentUnhover);
+        });
+        $(window).resize();
+        $(document).on({
+            mouseover: function(e){
+                var tabsContentHover = $(this).closest('.tab').attr('data-hover') * 1;
+                $(this).closest('.tab').fadeTo(100, 1);
+                $(this).closest('.tab').stop().css({'height': tabsContentHover});
+                $(this).find('.buttons_block').fadeIn(450, 'easeOutCirc');
+            },
+            mouseleave: function(e){
+                var tabsContentUnhoverHover = $(this).closest('.tab').attr('data-unhover') * 1;
+                $(this).closest('.tab').stop().animate({'height': tabsContentUnhoverHover}, 100);
+                $(this).find('.buttons_block').stop().fadeOut(233);
+            }
+        }, '.s_CxqOHg .tabs_slider li');
+    })
+
+
+                </script>
+                <script type="text/javascript">
+    /*$(".sort_filter a").on("click", function(){
+        if($(this).is(".current")){
+        $(this).toggleClass("desc").toggleClass("asc");
+        }
+        else{
+        $(this).toggleClass("desc").toggleClass("asc");
+        $(this).addClass("current").siblings().removeClass("current");
+        }
+    });*/
+    $(".sort_display a:not(.current)").on("click", function() {
+        $(this).addClass("current").siblings().removeClass("current");
+    });
+    $(".number_list a:not(.current)").on("click", function() {
+        $(this).addClass("current").siblings().removeClass("current");
+    });
+
+
+                </script>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+{%endblock%}

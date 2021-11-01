@@ -1,0 +1,115 @@
+{% extends 'patterns/__header__footer.html' %}
+
+{% block title %}Блог{% endblock %}
+
+{% block content%}
+
+<div class="wrapper_inner">
+    <section class="middle">
+        <div class="container">
+            <div class="breadcrumbs" id="navigation" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <div class="bx-breadcrumb-item" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a href="/" title="Главная" itemprop="item">
+                        <span itemprop="name">
+                            Главная
+						</span>
+                        <meta itemprop="position" content="1">
+					</a>
+				</div>
+				<span class="separator">-</span>
+                <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <span itemprop="item">
+                        <span itemprop="name">
+                            Блог
+						</span>
+                        <meta itemprop="position" content="2">
+					</span>
+				</span>
+			</div>
+            <!--title_content-->
+            <h1 data-page="" id="pagetitle">
+
+			</h1>
+            <!--end-title_content-->
+            <div id="content">
+                <div class="left_block">
+                    <ul class="left_menu">
+
+                                                <li class="item ">
+                            <a data-page="1" href="{{base_url}}"><span>Главная</span></a>
+						</li>
+
+
+
+                                                <li class="item ">
+                            <a data-page="13" href="{{base_url}}rekvizity"><span>Реквизиты </span></a>
+						</li>
+
+                                                <li class="item ">
+                            <a data-page="15" href="{{base_url}}oplata"><span>Оплата</span></a>
+						</li>
+
+                                                <li class="item ">
+                            <a data-page="17" href="{{base_url}}dostavka"><span>Доставка</span></a>
+						</li>
+
+                                                <li class="item ">
+                            <a data-page="18" href="{{base_url}}garantiya"><span>Гарантия</span></a>
+						</li>
+
+                                                <li class="item ">
+                            <a data-page="16" href="{{base_url}}contact"><span>Контакты</span></a>
+						</li>
+
+
+
+                                                					</ul>
+                    <script type="text/javascript">
+						$("ul.left_menu li:not(.current)").click(function(){
+							$(this).siblings().removeClass("current");
+							$(this).addClass("current");
+						});
+						if($('.child_container').length){
+							$('.child_container .menu_item').each(function(){
+								if($(this).hasClass('current')){
+									$(this).closest('.item').addClass('current');
+								}
+							})
+						}
+					</script>
+				</div>
+				<div class="right_block">
+                    <div class="articles-list lists_block news">
+                      {%for post in posts%}
+                        <div class="item clearfix item_block">
+							<div class="wrapper_inner_block">
+                                  <div class="right-data">
+									<div class="date_small">
+										{{post.date}}
+									</div>
+									<div class="item-title">
+										<a href="{{base_url}}blog/{{post.url}}">
+											<span data-post="4">
+												{{post.header}}
+											</span>
+										</a>
+									</div>
+									<div class="preview-text">
+
+									</div>
+								</div>
+								<div class="clear">
+								</div>
+							</div>
+						</div>
+                      {%endfor%}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+</div>
+{%endblock%}

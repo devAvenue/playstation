@@ -1,0 +1,87 @@
+{% extends 'patterns/__header__footer.html' %}
+
+{% block title %}Оплата{% endblock %}
+
+{% block content%}
+<div class="wrapper_inner">
+    <section class="middle">
+        <div class="container">
+            <div class="breadcrumbs" id="navigation" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+				<div class="bx-breadcrumb-item" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					<a href="/" title="Главная" itemprop="item">
+						<span itemprop="name">
+							Главная
+						</span>
+						<meta itemprop="position" content="1">
+					</a>
+				</div>
+				<span class="separator">-</span>
+				<span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					<span itemprop="item">
+						<span itemprop="name">
+							Оплата
+						</span>
+						<meta itemprop="position" content="2">
+					</span>
+				</span>
+			</div>
+			<!--title_content-->
+            <h1 id="pagetitle" data-page="15">Оплата</h1>
+			<!--end-title_content-->
+            <div id="content">
+                <div class="left_block">
+                    <ul class="left_menu">
+
+                                                <li class="item ">
+                            <a data-page="1" href="{{base_url}}"><span>Главная</span></a>
+						</li>
+
+
+
+                                                <li class="item ">
+                            <a data-page="13" href="{{base_url}}rekvizity"><span>Реквизиты </span></a>
+						</li>
+
+                                                <li class="item current">
+                            <a data-page="15" href="{{base_url}}oplata"><span>Оплата</span></a>
+						</li>
+
+                                                <li class="item ">
+                            <a data-page="17" href="{{base_url}}dostavka"><span>Доставка</span></a>
+						</li>
+
+                                                <li class="item ">
+                            <a data-page="18" href="{{base_url}}garantiya"><span>Гарантия</span></a>
+						</li>
+
+                                                <li class="item ">
+                            <a data-page="16" href="{{base_url}}contact"><span>Контакты</span></a>
+						</li>
+
+
+
+                                                					</ul>
+                    <script type="text/javascript">
+                        $("ul.left_menu li:not(.current)").click(function(){
+                            $(this).siblings().removeClass("current");
+                            $(this).addClass("current");
+						});
+                        if($('.child_container').length){
+                            $('.child_container .menu_item').each(function(){
+                                if($(this).hasClass('current')){
+                                    $(this).closest('.item').addClass('current');
+								}
+							})
+						}
+					</script>
+				</div>
+                <div class="right_block">
+                    <!-- Тело страницы -->
+                    <h3><strong><span size="3">Интернет-магазин принимает онлайн-платежи:</span><span size="3"><br></span><span style="font-size: medium;"><span size="3" style="font-size: medium;"><br></span></span></strong>&nbsp;&nbsp;<img src="/files/uploads/card--visa.png" style="color: #383838; font-size: 36px;" width="38" height="30"><span style="color: #383838; font-size: 36px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><img src="/files/uploads/card--mastercard.png" style="color: #383838; font-size: 36px;" width="38" height="30"><span style="color: #383838; font-size: 36px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><img src="/files/uploads/card--mir.png" style="color: #383838; font-size: 36px;" width="38" height="30"><br><br><span style="font-size: x-small;">Безопасность обеспечивается в соответствии с требованиями cтандрта PCI DSS, применением протоколов 3-D Secure и SSL.</span></h3><p><span style="font-size: x-small;"><strong><br><br></strong></span></p><p><span>Процедура покупки товара в нашем интернет-магазине&nbsp; состоит из нескольких шагов.</span></p><p><span style="font-size: x-small;"><strong></strong></span></p><h2>1. Оформление заказа</h2><p><span style="font-size: x-small;"><strong></strong></span></p><p><span>После выбора товара нажмите кнопку&nbsp;<b>В КОРЗИНУ</b>&nbsp;— товар добавится в вашу корзину.</span></p><p><span style="font-size: x-small;"><strong></strong></span></p><p><span>На странице&nbsp;<b>ваша корзина</b>&nbsp;будут перечислены все выбранные вами товары.</span></p><p><span style="font-size: x-small;"><strong></strong></span></p><p><span>Вы можете изменить количество&nbsp; или&nbsp; добавить необходимые вам товары.<br><br><strong>Примечание:&nbsp;</strong>Для постоянных клиентов на сайте магазина есть&nbsp;Регистрация. В своем кабинете вы можете просмотреть содержимое корзины, историю своих заказов, а также повторить или отказаться от заказа.</span></p><p><span style="font-size: x-small;"><strong></strong></span></p><h2>2. Оформление и подтверждение заказа</h2><p><span style="font-size: x-small;"><strong></strong></span></p><p><span>После ввода необходимой информации:&nbsp;</span><br><span>Фамилия Имя Отчество,&nbsp;<br></span><span>E-mail (копия заказа будет выслана на ваш e-mail, указанный при оформлении заказа),<br></span><span>Номер телефона,&nbsp;<br></span><span>Адрес доставки в формате город, улица, дом.<br></span><span>с вами свяжется наш менеджер в течении часа с 9:00 до 21:00 МСК, по контактным данным, указанным при оформлении заказа. Если заказа оформлен в нерабочее время, то звонок ваам поступит на следующий день. С менеджером можно будет согласовать точное время и сроки доставки, а также уточнить детали.&nbsp;</span></p><p><span style="font-size: x-small;"><strong></strong></span></p><p><span>3. Оплата и цены</span></p><p><span style="font-size: x-small;"><strong></strong></span></p><p><span>Цены, указанные на сайте, являются окончательными и не требуют доплат при стандартных условиях поставки. Все налоги включены в стоимость товара.</span></p><p><span style="font-size: x-small;"><strong></strong></span></p><p><span><b>Внимание!</b>&nbsp;Для каждого отдельного заказа возможен только один способ оплаты на ваш выбор. Оплата заказа по частям различными способами невозможна.</span></p><p><span style="font-size: x-small;"><strong></strong></span></p><p><span>Возможные способы оплаты:</span></p><p><span style="font-size: x-small;"><strong></strong></span></p><ul><li><span><span><b>Оплата онлайн на сайте интернет-магазина.</b>&nbsp;(Доступно по картам платежных систем РФ и Украины)<b><br></b></span></span><p>&nbsp; Прием платежей осуществляется по банковским картам платежных систем Visa, MasterCard, МИР.<br><strong><span>&nbsp; Безопасность обеспечивается в соответствии с требованиями cтандрта PCI DSS, применением протоколов 3-D Secure и SSL.</span></strong></p></li><li><span><b>Наличный расчет&nbsp;</b>(Доступно для постоянный клиентов.)</span><br><span>Оплата производится наличными курьеру при доставке.&nbsp;</span><br><span>Вместе с товаром передается товарный и кассовый чеки, а также гарантийный талон.</span><br><br></li><li><span><b>Оплата через Сбербанк</b>.</span><br><span>Вы можете оплатить заказ в любом отделении Сбербанка. За услугу по переводу денег с вас возьмут от 3 до 7% от стоимости заказа, в зависимости от региона. Перечисление денег займет порядка 10 дней.</span></li></ul><p><span style="font-size: x-small;"><strong><br></strong></span></p>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+</div>
+{%endblock%}
