@@ -297,7 +297,7 @@
 
 
                                     <li class="menu_item_l1">
-                                        <a data-page="13" href="{{ base_url }}rekvizity"><span>Реквизиты </span></a>
+                                        <a data-page="3" href="{{ base_url }}rekvizity"><span>Реквизиты </span></a>
                                     </li>
 
                                     <li class="menu_item_l1">
@@ -319,7 +319,7 @@
 
                                     <li class="stretch"></li>
                                     <li class="search_row">
-                                        <form action="{{ base_url }}products" class="search1">
+                                        <form action="{{ base_url }}catalog" class="search1">
                                             <input id="title-search-input4" class="search_field1 input_search"
                                                    type="text" name="keyword" value="" placeholder="Поиск товара"
                                                    autocomplete="off"/>
@@ -331,7 +331,7 @@
                                 </ul>
                                 <div class="search_middle_block">
                                     <div id="title-search2" class="stitle_form">
-                                        <form action="{{ base_url }}products">
+                                        <form action="{{ base_url }}catalog">
                                             <div class="form-control1 bg">
                                                 <input id="title-search-input2" type="text" name="keyword" value=""
                                                        size="40" class="text small_block input_search" maxlength="50"
@@ -374,8 +374,8 @@
                             </div>
                             <div class="search">
                                 <div id="title-search" class="stitle_form">
-                                    <form action="{{ base_url }}products">
-                                        <div class="form-control1 bg">
+                                    <form action="{{ base_url }}catalog">
+                                        <div class="form-control1 bg" style="position: relative; right: -66px;">
                                             <input id="title-search-input" type="text" name="keyword" value="" size="40"
                                                    class="text small_block input_search" maxlength="50"
                                                    autocomplete="off" placeholder="Поиск по сайту"/><input name="s"
@@ -393,15 +393,15 @@
                                     <div class="basket_fly">
                                         <div class="wrap_cont">
                                             <div class="opener">
-                                                <div onclick="location.href='/cart';" id="cart_informer"
+                                                <div onclick="location.href='{{base_url}}cart';" id="cart_informer"
                                                      class="basket_count small">
 
-                                                    <a class="empty" href="/cart/">
+                                                    <a class="empty" href="{{base_url}}cart">
                                                         <div class="wraps_icon_block basket">
                                                             <div class="count">
             <span>
                 <div class="items">
-                    <div>0</div>
+                    <div id="basket_count">{{basket|length}}</div>
 				</div>
 			</span>
                                                             </div>
@@ -409,22 +409,7 @@
                                                     </a>
 
                                                 </div>
-                                                <div onclick="location.href='/wishlist';" id="wishlist_informer"
-                                                     class="wish_count empty small">
 
-                                                    <a href="/wishlist/">
-                                                        <div class="wraps_icon_block delay">
-                                                            <div class="count">
-            <span>
-                <div class="items">
-                    <div>0</div>
-				</div>
-			</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -548,10 +533,10 @@
                             </div>
                             <div class="iblock all_menu_block">
                                 <div class="wrap_md submenu_top">
-                                    <div class="menu_item iblock"><a href="{{ base_url }}dostavka/">Доставка</a></div>
-                                    <div class="menu_item iblock"><a href="{{ base_url }}publichnaya-oferta/">Оферта</a>
+                                    <div class="menu_item iblock"><a href="{{ base_url }}dostavka">Доставка</a></div>
+                                    <div class="menu_item iblock"><a href="{{ base_url }}blog/publichnaya-oferta">Оферта</a>
                                     </div>
-                                    <div class="menu_item iblock"><a href="{{ base_url }}konfidentsialnost/">Конфиденциальность</a>
+                                    <div class="menu_item iblock"><a href="{{ base_url }}blog/konfidentsialnost">Конфиденциальность</a>
                                     </div>
 
                                 </div>

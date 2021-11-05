@@ -13,10 +13,13 @@ urlpatterns = [
     path('blog/<str:post>', views.get_blog),
 
     path('catalog/', views.main_catalog),
-    path('catalog/<str:category>', views.catalog)
+    path('catalog/<str:id>', views.catalog),
 
-    # path('products/<str:username>', views.products),
-    #
+    path('products/<str:id>', views.product),
+    path('cart', views.basket),
+    path('cart/<str:action>/<str:id>', views.remove),
+    path('api', views.api),
+    path('404/',views.handler404)
     # path('profile/<str:username>', views.profile, name="profile"),
     # path('post/<int:id>', views.publicate, name="post"),
 ]
