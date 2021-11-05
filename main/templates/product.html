@@ -1,0 +1,455 @@
+{% extends 'patterns/__header__footer.html' %}
+
+{% block title %}Доставка{% endblock %}
+
+{% block content%}
+<div class="wrapper_inner">
+    <section class="middle">
+        <div class="container">
+            <!-- Хлебные крошки /-->
+            <div class="breadcrumbs" id="navigation" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <div class="breadcrumbs" id="navigation" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                    <div class="bx-breadcrumb-item" id="bx_breadcrumb_0" itemprop="itemListElement" itemscope=""
+                         itemtype="http://schema.org/ListItem">
+                        <a href="{{base_url}}" title="Главная" itemprop="item">
+                            <span itemprop="name">
+                                Главная
+                            </span>
+                            <meta itemprop="position" content="1">
+                        </a>
+                    </div>
+                    <span class="separator">-</span>
+                    <div class="bx-breadcrumb-item" itemprop="itemListElement" itemscope=""
+                         itemtype="http://schema.org/ListItem">
+                        <a href="{{base_url}}catalog/" title="Каталог" itemprop="item">
+                            <span itemprop="name">
+                                Каталог
+                            </span>
+                            <meta itemprop="position" content="2">
+                        </a>
+                    </div>
+                    <span class="separator">-</span>
+                    <div class="bx-breadcrumb-item" itemprop="itemListElement" itemscope=""
+                         itemtype="http://schema.org/ListItem">
+                        <a href="{{base_url}}catalog/{{product.category.id}}" title="{{product.name}}"
+                           itemprop="item">
+                            <span itemprop="name">
+                                Очки виртуальной реальности
+                            </span>
+                            <meta itemprop="position" content="3">
+                        </a>
+                    </div>
+                    <span class="separator">-</span>
+                    <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                        <span itemprop="item">
+                            <span itemprop="name">
+                                {{product.name}}
+                            </span>
+                            <meta itemprop="position" content="5">
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <!-- Хлебные крошки #End /-->
+            <!--title_content-->
+            <h1 data-product="233" id="pagetitle">{{product.name}}</h1>
+            <!--end-title_content-->
+            <div id="content">
+                <div class="catalog_detail" itemscope="" itemtype="http://schema.org/Product">
+                    <meta itemprop="name"
+                          content="{{product.name}}">
+                    <meta itemprop="category" content="{{product.name}}">
+                    <div class="item_main_info">
+                        {{product.images|safe}}
+                        <div class="right_info">
+                            <div class="info_item ">
+                                <div class="top_info">
+                                    <div class="wrap_md">
+                                        <div>
+                                            <div class="article iblock" itemprop="additionalProperty" itemscope=""
+                                                 itemtype="http://schema.org/PropertyValue">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="middle_info main_item_wrapper wrap_md">
+                                    <div class="prices_block iblock">
+                                        <div class="cost prices clearfix">
+                                            <div class="price">
+                                                <div class="offers_price_wrapper">
+                                                    <div class="offers_price">
+                                                        <span class="values_wrapper">
+                                                            <span class="price_value">{{product.price}}</span>
+                                                            <span class="price_currency"> руб.</span>
+                                                        </span>
+                                                        <span class="price_measure">/шт</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- $product->variants|count > 0 -->
+                                        <div class="item-stock">
+                                            <span class="icon stock"></span>
+                                            <span class="value"><span class="store_view">в наличии</span></span>
+                                        </div>
+                                        <div rel="233" class="rating">
+                                            <div class="iblock-vote" itemprop="aggregateRating" itemscope=""
+                                                 itemtype="http://schema.org/AggregateRating">
+                                                <meta itemprop="ratingValue" content="3.4">
+                                                <meta itemprop="reviewCount" content="5">
+                                                <meta itemprop="bestRating" content="5">
+                                                <meta itemprop="worstRating" content="0">
+                                                <span class="rater-starsOff" style="cursor: default; opacity: 1;"><span
+                                                        style="width: 56px; cursor: default;"
+                                                        class="rater-starsOn"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buy_block iblock">
+                                        <form class="variants" data-id="251" data-name="Шлем виртуальной реальности Sony PlayStation VR (CUH-ZVR2) + HD Camera PS5 + 2 Move Motion Controller, черно-белый">
+                                            <div class="sku_props hidden">
+                                                <div class="bx_catalog_item_scu wrapper_sku">
+                                                    <div class="bx_item_detail_scu">
+                                                        <span class="show_class bx_item_section_name">
+                                                            Вариант
+                                                        </span>
+                                                        <div class="bx_scu_scroller_container">
+                                                            <div class="bx_scu">
+                                                                <label class="select-variant  hidden">
+                                                                    <select name="variant" id="variant_251" class="orderby" data-productid="251">
+                                                                                                                                                <option value="393" data-price="39 990" selected=""></option>
+                                                                                                                                            </select>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="offer_buy_block buys_wrapp" style="">
+                                                <div class="counter_wrapp">
+                                                    <div class="counter_block big_basket" data-item="391">
+                                                        <span class="minus">-</span>
+                                                        <input class="text" name="amount" id="product{{product.id}}" value="1" type="text">
+                                                        <span class="plus">+</span>
+                                                    </div>
+                                                    <div class="button_block "onclick="addToBasket('{{product.id}}')">
+                                                        <input data-result-text="добавлен" type="submit" class="big_btn to-cart button bold" value="в корзину">
+                                                    <script>
+                                    function addToBasket(product_id) {
+                                        var count = document.getElementById("product"+product_id).value;
+                                        fetch('{{base_url}}api?action=addbasket&id='+product_id+'&count='+count)
+                                        var basket_count = Number(document.getElementById("basket_count").textContent);
+                                        document.getElementById("basket_count").innerHTML = Number(basket_count+1);
+                                    }
+                                </script>
+                                                    </div>
+                                                </div>
+<!--                                                 <div class="wrapp_one_click">
+                                                    <span class="transparent big_btn type_block button one_click"><span>Купить в 2 клик</span></span>
+                                                </div> -->
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="preview_text"></div>
+                                </div>
+                                <div class="element_detail_text wrap_md">
+                                    <div class="iblock sh">
+                                        <script type="text/javascript" src="//yandex.st/share/share.js"
+                                                charset="utf-8"></script>
+                                        <div class="share_wrapp">
+                                            <div class="text button transparent">
+                                                Поделиться
+                                            </div>
+                                            <div class="yashare-auto-init shares" data-yasharel10n="ru"
+                                                 data-yasharetype="none"
+                                                 data-yasharequickservices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"
+                                                 style="display: none;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="iblock price_txt">
+                                        Цена действительна только для интернет-магазина и может отличаться от цен в
+                                        розничных магазинах
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                            <meta itemprop="price" content="{{product.price}}">
+                            <meta itemprop="priceCurrency" content="RUB">
+                            <link itemprop="availability" href="https://schema.org/InStock">
+                        </span>
+                        <div class="clearleft"></div>
+                    </div>
+                    {{product.comments|safe}}
+                    <div id="reviews_content">
+                        <p>
+                            Пока нет комментариев
+                        </p>
+                        <div class="reviews-collapse reviews-minimized">
+                            <span class="reviews-collapse-link button wicon"><i></i><span>Оставить отзыв</span></span>
+                        </div>
+                        <a data-name="review_anchor"></a>
+                        <div class="reviews-reply-form">
+                            <form method="POST" class="reviews-form">
+                                <div>
+                                    <div class="reviews-reply-fields">
+                                        <div class="reviews-reply-field-user">
+                                            <div class="form-control reviews-reply-field reviews-reply-field-author">
+                                                <label for="comment_name">Ваше имя<span
+                                                        class="star reviews-required-field"> *</span></label>
+                                                <span>
+                                                    <input class="input_name" type="text" tabindex="1" size="30"
+                                                           id="comment_name" name="name" value="" data-format=".+"
+                                                           data-notice="Введите имя">
+                                                </span>
+                                            </div>
+                                            <div class="reviews-clear-float"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-control">
+                                        <div class="reviews-reply-header"><label>Текст сообщения<span
+                                                class="star reviews-required-field"> *</span>
+                                        </label>
+                                        </div>
+                                        <div class="reviews-reply-field reviews-reply-field-text">
+                                            <div class="bxlhe-frame">
+                                                <textarea class="comment_textarea" id="comment_text" name="text"
+                                                          data-format=".+" data-notice="Введите комментарий"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-control bg register-captcha captcha-row clearfix reviews-reply-field reviews-reply-field-captcha">
+                                        <div class="iblock label_block">
+                                            <label for="captcha_word">Символы на картинке<span
+                                                    class="star reviews-required-field"> *</span></label>
+                                            <div class="captcha_image">
+                                                <img src="captcha/image.php?5427"
+                                                     alt="Защита от автоматических сообщений">
+                                            </div>
+                                            <div class="captcha_input">
+                                                <input size="30" tabindex="2" autocomplete="off" id="comment_captcha"
+                                                       type="text" name="captcha_code" value="" data-format="\d\d\d\d"
+                                                       data-notice="Введите капчу">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews-reply-buttons">
+                                        <input name="comment" class="button" value="Отправить" tabindex="4"
+                                               type="submit">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="specials_tabs_section1 specials_slider_wrapp1 specials tab_slider_wrapp s_CxqOHg">
+                    <div class="top_blocks">
+                        <ul class="tabs">
+                            <li data-code="RECOMMEND" class="cur"><span>Рекомендуем</span></li>
+                            <li class="stretch"></li>
+                        </ul>
+                        <ul class="slider_navigation top">
+                            <li class="tabs_slider_navigation RECOMMEND_nav cur" data-code="RECOMMEND">
+                            </li>
+                            <li class="tabs_slider_navigation ASSOCIATED_nav" data-code="ASSOCIATED"></li>
+                        </ul>
+                    </div>
+                    <ul class="tabs_content" style="height: 411px;">
+                        <li class="tab RECOMENDATION_wrapp cur" data-code="RECOMENDATION" data-unhover="411" data-hover="494" style="opacity: 1; overflow: hidden; height: 411px;">
+
+
+                            <div class="flex-viewport" style="overflow: hidden; position: relative;">
+
+                            </div>
+                        <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="tabs_slider RECOMENDATION_slides wr" style="width: 1200%; transition-duration: 0.6s; transform: translate3d(0px, 0px, 0px);">
+                            {% load replace %}
+                            {% for item in recommend %}
+                            <li class="catalog_item product" style="width: 170px; height: 346px; float: left; display: block; opacity: 1;">
+                                        <div class="image_wrapper_block">
+                                            <a href="{{base_url}}products/{{item.id}}" class="thumb image">
+                                                <div class="stickers">
+                                                    <div class="sticker_recommend" title="Советуем"></div>
+                                                </div>
+                                                <img src='{{item.photo}}' alt="{{item.name}}" style="width: 80px;"
+                                                     title="{{item.name}}" draggable="false">
+                                            </a>
+                                        </div>
+                                        <div class="item_info main_item_wrapper" style="height: 157px;">
+                                            <div class="item-title" style="height: 80px;">
+                                                <a href="{{base_url}}products/333"><span data-product="196">{{item.name}}</span></a>
+                                            </div>
+                                            <!-- $product->variants|count > 0 -->
+                                            <div class="item-stock"><span class="icon stock"></span><span class="value">в наличии</span>
+                                            </div>
+                                            <div class="cost prices clearfix">
+                                                <div class="price">
+                                                    <span class="values_wrapper">{{item.price}} руб.</span>
+                                                </div>
+                                            </div>
+                                            <div class="buttons_block clearfix" style="opacity: 1; display: none;">
+                                                <a class="button basket read_more" rel="nofollow" href="{{base_url}}products/333">Подробнее</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                            {%endfor %}
+                                </ul></div></li>
+                        <li class="tab ASSOCIATED_wrapp" data-code="ASSOCIATED">
+                            <ul class="tabs_slider ASSOCIATED_slides wr">
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $('.tab_slider_wrapp.s_CxqOHg .tabs > li').first().addClass('cur');
+                        $('.tab_slider_wrapp.s_CxqOHg .slider_navigation > li').first().addClass('cur');
+                        $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li').first().addClass('cur');
+                        var flexsliderItemWidth = 210;
+                        var flexsliderItemMargin = 20;
+                        var sliderWidth = $('.tab_slider_wrapp.s_CxqOHg').outerWidth();
+                        var flexsliderMinItems = Math.floor(sliderWidth / (flexsliderItemWidth + flexsliderItemMargin));
+                        $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur').flexslider({
+                            animation: 'slide',
+                            selector: '.tabs_slider .catalog_item',
+                            slideshow: false,
+                            animationSpeed: 600,
+                            directionNav: true,
+                            controlNav: false,
+                            pauseOnHover: true,
+                            animationLoop: true,
+                            itemWidth: flexsliderItemWidth,
+                            itemMargin: flexsliderItemMargin,
+                            minItems: flexsliderMinItems,
+                            controlsContainer: '.tabs_slider_navigation.cur',
+                            start: function(slider){
+                                slider.find('li').css('opacity', 1);
+                            }
+                        });
+                        $('.tab_slider_wrapp.s_CxqOHg .tabs > li').on('click', function(){
+                            if(!$(this).hasClass('active')){
+                                var sliderIndex = $(this).index();
+                                $(this).addClass('active').addClass('cur').siblings().removeClass('active').removeClass('cur');
+                                $('.tab_slider_wrapp.s_CxqOHg .slider_navigation > li:eq(' + sliderIndex + ')').addClass('cur').show().siblings().removeClass('cur');
+                                $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li:eq(' + sliderIndex + ')').addClass('cur').siblings().removeClass('cur');
+                                if(!$('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur .flex-viewport').length){
+                                    $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur').flexslider({
+                                        animation: 'slide',
+                                        selector: '.tabs_slider .catalog_item',
+                                        slideshow: false,
+                                        animationSpeed: 600,
+                                        directionNav: true,
+                                        controlNav: false,
+                                        pauseOnHover: true,
+                                        animationLoop: true,
+                                        itemWidth: flexsliderItemWidth,
+                                        itemMargin: flexsliderItemMargin,
+                                        minItems: flexsliderMinItems,
+                                        controlsContainer: '.tabs_slider_navigation.cur',
+                                    });
+                                }
+                                $(window).resize();
+                            }
+                        });
+                        $(window).resize(function(){
+                            var sliderWidth = $('.tab_slider_wrapp.s_CxqOHg').outerWidth();
+                            $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur').css('height', '');
+                            $('.tab_slider_wrapp.s_CxqOHg .tabs_content .tab.cur .tabs_slider .buttons_block').hide();
+                            $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur').equalize({children: '.item-title'});
+                            $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur').equalize({children: '.item_info'});
+                            $('.tab_slider_wrapp.s_CxqOHg .tabs_content > li.cur').equalize({children: '.catalog_item'});
+                            var itemsButtonsHeight = $('.tab_slider_wrapp.s_CxqOHg .tabs_content .tab.cur .tabs_slider li .buttons_block').height();
+                            var tabsContentUnhover = $('.tab_slider_wrapp.s_CxqOHg .tabs_content .tab.cur').height() * 1;
+                            var tabsContentHover = tabsContentUnhover + itemsButtonsHeight+50;
+                            $('.tab_slider_wrapp.s_CxqOHg .tabs_content .tab.cur').attr('data-unhover', tabsContentUnhover);
+                            $('.tab_slider_wrapp.s_CxqOHg .tabs_content .tab.cur').attr('data-hover', tabsContentHover);
+                            $('.tab_slider_wrapp.s_CxqOHg .tabs_content').height(tabsContentUnhover);
+                        });
+                        $(window).resize();
+                        $(document).on({
+                            mouseover: function(e){
+                                var tabsContentHover = $(this).closest('.tab').attr('data-hover') * 1;
+                                $(this).closest('.tab').fadeTo(100, 1);
+                                $(this).closest('.tab').stop().css({'height': tabsContentHover});
+                                $(this).find('.buttons_block').fadeIn(450, 'easeOutCirc');
+                            },
+                            mouseleave: function(e){
+                                var tabsContentUnhoverHover = $(this).closest('.tab').attr('data-unhover') * 1;
+                                $(this).closest('.tab').stop().animate({'height': tabsContentUnhoverHover}, 100);
+                                $(this).find('.buttons_block').stop().fadeOut(233);
+                            }
+                        }, '.s_CxqOHg .tabs_slider li');
+                    })
+
+                </script>
+
+
+                <div class="detail_footer">
+                    <div class="similar_products_wrapp">
+
+                        <script type="text/javascript">
+                            $(document).ready(function(){
+                                var flexsliderItemWidth = 210;
+                                var flexsliderItemMargin = 20;
+                                var sliderWidth = $('.specials_slider_wrapp').outerWidth();
+                                //var flexsliderMinItems = Math.floor(sliderWidth / (flexsliderItemWidth + flexsliderItemMargin));
+                                $('.viewed_slider.s_qsNgU0 .content_inner').flexslider({
+                                    animation: 'slide',
+                                    selector: '.slides > li',
+                                    slideshow: false,
+                                    animationSpeed: 600,
+                                    directionNav: true,
+                                    controlNav: false,
+                                    pauseOnHover: true,
+                                    animationLoop: true,
+                                    itemWidth: flexsliderItemWidth,
+                                    itemMargin: flexsliderItemMargin,
+                                    //minItems: flexsliderMinItems,
+                                    controlsContainer: '.viewed_navigation',
+                                    start: function(slider){
+                                        slider.find('li').css('opacity', 1);
+                                    }
+                                });
+                                $(window).resize(function(){
+                                    var itemsButtonsHeight = $('.wrapper_block.s_qsNgU0 .wr > li .buttons_block').height();
+                                    $('.wrapper_block.s_qsNgU0 .wr .buttons_block').hide();
+                                    if($('.wrapper_block.s_qsNgU0 .all_wrapp .content_inner').attr('data-hover') ==undefined){
+                                        var tabsContentUnhover = ($('.wrapper_block.s_qsNgU0 .all_wrapp').height() * 1)+20;
+                                        var tabsContentHover = tabsContentUnhover + itemsButtonsHeight+50;
+                                        $('.wrapper_block.s_qsNgU0 .all_wrapp .content_inner').attr('data-unhover', tabsContentUnhover);
+                                        $('.wrapper_block.s_qsNgU0 .all_wrapp .content_inner').attr('data-hover', tabsContentHover);
+                                        $('.wrapper_block.s_qsNgU0 .all_wrapp').height(tabsContentUnhover);
+                                        $('.wrapper_block.s_qsNgU0 .all_wrapp .content_inner').addClass('absolute');
+                                    }
+                                });
+                                $(window).resize();
+                                $('.wrapper_block.s_qsNgU0 .wr > li').hover(
+                                function(){
+                                    //if($(window).outerWidth()>550){
+                                    var tabsContentHover = $(this).closest('.content_inner').attr('data-hover') * 1;
+                                    $(this).closest('.content_inner').fadeTo(100, 1);
+                                    $(this).closest('.content_inner').stop().css({'height': tabsContentHover});
+                                    $(this).find('.buttons_block').fadeIn(750, 'easeOutCirc');
+                                    //}
+                                },
+                                function(){
+                                    //if($(window).outerWidth()>550){
+                                    var tabsContentUnhoverHover = $(this).closest('.content_inner').attr('data-unhover') * 1;
+                                    $(this).closest('.content_inner').stop().animate({'height': tabsContentUnhoverHover}, 100);
+                                    $(this).find('.buttons_block').stop().fadeOut(203);
+                                    //}
+                                }
+                                );
+                            })
+
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+{%endblock%}
